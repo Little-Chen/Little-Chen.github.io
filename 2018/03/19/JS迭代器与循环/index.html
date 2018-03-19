@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="JS," />
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="#JS中迭代器与循环 ##map、eval、for…in、for…of、forEach ###最早的数组遍历方式1234var a = [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;];for(var index = 0;index &amp;lt; a.length;index++)&amp;#123;  console.log(a[index]);&amp;#125; ###map定义和方法map理解为“映射”的意思，基本用法同for">
+<meta name="description" content="##map、eval、for…in、for…of、forEach ###最早的数组遍历方式1234var a = [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;];for(var index = 0;index &amp;lt; a.length;index++)&amp;#123;  console.log(a[index]);&amp;#125; ###map定义和方法map理解为“映射”的意思，基本用法同forEach，为ES5新增">
+<meta name="keywords" content="JS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="陈乾">
+<meta property="og:title" content="JS迭代器与循环.md">
 <meta property="og:url" content="http://yoursite.com/2018/03/19/JS迭代器与循环/index.html">
 <meta property="og:site_name" content="陈乾">
-<meta property="og:description" content="#JS中迭代器与循环 ##map、eval、for…in、for…of、forEach ###最早的数组遍历方式1234var a = [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;];for(var index = 0;index &amp;lt; a.length;index++)&amp;#123;  console.log(a[index]);&amp;#125; ###map定义和方法map理解为“映射”的意思，基本用法同for">
+<meta property="og:description" content="##map、eval、for…in、for…of、forEach ###最早的数组遍历方式1234var a = [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;];for(var index = 0;index &amp;lt; a.length;index++)&amp;#123;  console.log(a[index]);&amp;#125; ###map定义和方法map理解为“映射”的意思，基本用法同forEach，为ES5新增">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-19T11:58:56.654Z">
+<meta property="og:updated_time" content="2018-03-19T12:01:32.631Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="陈乾">
-<meta name="twitter:description" content="#JS中迭代器与循环 ##map、eval、for…in、for…of、forEach ###最早的数组遍历方式1234var a = [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;];for(var index = 0;index &amp;lt; a.length;index++)&amp;#123;  console.log(a[index]);&amp;#125; ###map定义和方法map理解为“映射”的意思，基本用法同for">
+<meta name="twitter:title" content="JS迭代器与循环.md">
+<meta name="twitter:description" content="##map、eval、for…in、for…of、forEach ###最早的数组遍历方式1234var a = [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;];for(var index = 0;index &amp;lt; a.length;index++)&amp;#123;  console.log(a[index]);&amp;#125; ###map定义和方法map理解为“映射”的意思，基本用法同forEach，为ES5新增">
 
 
 
@@ -125,7 +126,7 @@
 
 
 
-  <title> | 陈乾</title>
+  <title>JS迭代器与循环.md | 陈乾</title>
   
 
 
@@ -269,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline"></h1>
+          <h1 class="post-title" itemprop="name headline">JS迭代器与循环.md</h1>
         
 
         <div class="post-meta">
@@ -281,7 +282,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-19T19:58:19+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-19T19:02:03+08:00">
                 2018-03-19
               </time>
             
@@ -291,6 +292,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JS/" itemprop="url" rel="index">
+                    <span itemprop="name">JS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -319,8 +342,7 @@
       
 
       
-        <p>#JS中迭代器与循环</p>
-<p>##map、eval、for…in、for…of、forEach</p>
+        <p>##map、eval、for…in、for…of、forEach</p>
 <p>###最早的数组遍历方式<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> index = <span class="number">0</span>;index &lt; a.length;index++)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a[index]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>###map定义和方法<br><strong>map</strong>理解为“映射”的意思，基本用法同forEach，为ES5新增属性方法。</p>
 <p>❤<strong>map()方法返回一个新数组，数组中的元素为原始数组元素调用函数处理的后值。</strong><br>❤<strong>map()方法按照原始数组元素顺序依次处理元素。</strong> </p>
@@ -395,6 +417,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JS/" rel="tag"># JS</a>
+          
+        </div>
       
 
       
@@ -492,7 +520,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -503,7 +531,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
