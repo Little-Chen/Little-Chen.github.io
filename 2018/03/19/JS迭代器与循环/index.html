@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="##map、eval、for…in、for…of、forEach  ###最早的数组遍历方式">
+<meta name="description" content="map、eval、for…in、for…of、forEach最早的数组遍历方式">
 <meta name="keywords" content="JS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JS迭代器与循环">
 <meta property="og:url" content="http://yoursite.com/2018/03/19/JS迭代器与循环/index.html">
 <meta property="og:site_name" content="陈乾">
-<meta property="og:description" content="##map、eval、for…in、for…of、forEach  ###最早的数组遍历方式">
+<meta property="og:description" content="map、eval、for…in、for…of、forEach最早的数组遍历方式">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-21T14:27:39.759Z">
+<meta property="og:updated_time" content="2018-03-21T14:47:09.835Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS迭代器与循环">
-<meta name="twitter:description" content="##map、eval、for…in、for…of、forEach  ###最早的数组遍历方式">
+<meta name="twitter:description" content="map、eval、for…in、for…of、forEach最早的数组遍历方式">
 
 
 
@@ -388,11 +388,9 @@
       
 
       
-        <p> ##map、eval、for…in、for…of、forEach</p>
-<p> ###最早的数组遍历方式<br><a id="more"></a></p>
+        <h2 id="map、eval、for…in、for…of、forEach"><a href="#map、eval、for…in、for…of、forEach" class="headerlink" title="map、eval、for…in、for…of、forEach"></a>map、eval、for…in、for…of、forEach</h2><h3 id="最早的数组遍历方式"><a href="#最早的数组遍历方式" class="headerlink" title="最早的数组遍历方式"></a>最早的数组遍历方式</h3><a id="more"></a>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> index = <span class="number">0</span>;index &lt; a.length;index++)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a[index]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p> ###map定义和方法<br><strong>map</strong>理解为“映射”的意思，基本用法同forEach，为ES5新增属性方法。</p>
-<p>❤<strong>map()方法返回一个新数组，数组中的元素为原始数组元素调用函数处理的后值。</strong><br>❤<strong>map()方法按照原始数组元素顺序依次处理元素。</strong> </p>
+<h3 id="map定义和方法"><a href="#map定义和方法" class="headerlink" title="map定义和方法"></a>map定义和方法</h3><p><strong>map</strong>理解为“映射”的意思，基本用法同forEach，为ES5新增属性方法。<br>❤<strong>map()方法返回一个新数组，数组中的元素为原始数组元素调用函数处理的后值。</strong><br>❤<strong>map()方法按照原始数组元素顺序依次处理元素。</strong> </p>
 <p><strong>注意：</strong><br>map不会对空数组进行检测<br>map不会改变原始数组<br>处理函数必须有<strong>返回值</strong>，否则会映射成undefined。<br><strong>map使用语法：</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr.map(<span class="function"><span class="keyword">function</span>(<span class="params">currentValue，index，arr</span>),<span class="title">thisValue</span>)</span></span><br></pre></td></tr></table></figure>
 <p>参数:</p>
@@ -402,10 +400,9 @@
 </ol>
 <p>❤另外，由于map方法为ES5新增方法，不支持<strong>IE9以下浏览器</strong>。如果需要兼容，可用<strong>原型扩展</strong>。<br>方法如下：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="built_in">Array</span>.prototype.map != <span class="string">"function"</span>) &#123;</span><br><span class="line">  <span class="built_in">Array</span>.prototype.map = <span class="function"><span class="keyword">function</span> (<span class="params">fn, context</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> arr = [];</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> fn === <span class="string">"function"</span>) &#123;</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">var</span> k = <span class="number">0</span>, length = <span class="keyword">this</span>.length; k &lt; length; k++) &#123;      </span><br><span class="line">         arr.push(fn.call(context, <span class="keyword">this</span>[k], k, <span class="keyword">this</span>));</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> arr;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p> ####jquery中map方法用法同原生<br>且从 1.6 开始，该函数也支持遍历对象。它接受两个参数，分别是要处理的数组/对象和处理函数，其处理函数也接受键值和键名两个参数。</p>
+<h4 id="jquery中map方法用法同原生"><a href="#jquery中map方法用法同原生" class="headerlink" title="jquery中map方法用法同原生"></a>jquery中map方法用法同原生</h4><p>且从 1.6 开始，该函数也支持遍历对象。它接受两个参数，分别是要处理的数组/对象和处理函数，其处理函数也接受键值和键名两个参数。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**** jQuery $.map() ****/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 筛选数组元素</span></span><br><span class="line"><span class="keyword">var</span> arrTmp = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</span><br><span class="line"><span class="keyword">var</span> bigNum = $.map(arrTmp,<span class="function"><span class="keyword">function</span>(<span class="params">num</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(num&gt;<span class="number">2</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> num;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// bigNum -&gt; [3,4,5]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 处理对象</span></span><br><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">    jack:&#123;<span class="attr">age</span>:<span class="number">9</span>&#125;,</span><br><span class="line">    tom:&#123;<span class="attr">age</span>:<span class="number">20</span>&#125;,</span><br><span class="line">    bobo:&#123;<span class="attr">age</span>:<span class="number">30</span>&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> oldMan = $.map(person,<span class="function"><span class="keyword">function</span>(<span class="params">value,key</span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(value.age&gt;<span class="number">26</span>)&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> key;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// oldMan -&gt; ["bobo"]</span></span><br></pre></td></tr></table></figure>
-<p> ###eval</p>
-<blockquote>
+<h3 id="eval"><a href="#eval" class="headerlink" title="eval"></a>eval</h3><blockquote>
 <p>eval() 函数可计算某个字符串，并执行其中的的 JavaScript 代码。</p>
 </blockquote>
 <p>注意：<br><strong>strong text</strong>该方法只接受原始字符串作为参数，如果 string 参数不是原始字符串，那么该方法将不作任何改变地返回。<br>例子：</p>
@@ -413,11 +410,9 @@
 <p> ###1 forEach<br>语法：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[].forEach(<span class="function"><span class="keyword">function</span>(<span class="params">value, index, array</span>) </span>&#123; <span class="comment">// ... &#125;);</span></span><br></pre></td></tr></table></figure>
 <p>forEach遍历数组，而不是遍历对象哦，而且在遍历的过程中不能被终止,必须每一个值遍历一遍后才能停下来.<br>也就是说：<strong>你不能使用break来退出循环, 不能使用return语句来返回到外层</strong></p>
-<p> ####jquery中forEach<br>注意其与jQuery的$.each类似，只不过参数正好是相反的！</p>
+<h4 id="jquery中forEach"><a href="#jquery中forEach" class="headerlink" title="jquery中forEach"></a>jquery中forEach</h4><p>注意其与jQuery的$.each类似，只不过参数正好是相反的！</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$.each([], <span class="function"><span class="keyword">function</span>(<span class="params">index, value, array</span>) </span>&#123; <span class="comment">// ... &#125;);</span></span><br></pre></td></tr></table></figure>
-<p> ###2 for…in</p>
-<p> ####适合进行普通对象的遍历</p>
-<blockquote>
+<h3 id="2-for…in"><a href="#2-for…in" class="headerlink" title="2 for…in"></a>2 for…in</h3><h4 id="适合进行普通对象的遍历"><a href="#适合进行普通对象的遍历" class="headerlink" title="适合进行普通对象的遍历"></a>适合进行普通对象的遍历</h4><blockquote>
 <p>for-in循环遍历对象的key，即键值对的键名。</p>
 </blockquote>
 <p>特性如下：</p>
@@ -429,9 +424,7 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myArry =[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</span><br><span class="line">myArry.desc =<span class="string">'four'</span>;</span><br><span class="line"> <span class="keyword">for</span>(<span class="keyword">var</span> value <span class="keyword">in</span> myArry)&#123; <span class="comment">//循环key</span></span><br><span class="line">  <span class="built_in">console</span>.log(value)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//"0"</span></span><br><span class="line"><span class="comment">//"1"</span></span><br><span class="line"><span class="comment">//"2"</span></span><br><span class="line"><span class="comment">//"3"</span></span><br><span class="line"><span class="comment">//"desc" 注意这里添加上去的属性也被遍历出来了</span></span><br></pre></td></tr></table></figure>
 <p>for…in由于历史遗留问题，它遍历的实际上是对象的属性名称，一个Array数据也是一个对象，数组中的每个元素的索引被视为属性名称，所以我们可以看到使用for…in循环Array数组时，拿到的其实是每个元素的索引.</p>
 <p>PS:若要避免原型链上的属性也被遍历到，可采用hasOwnProperty()方法去过滤掉对象原型链上的属性。</p>
-<p> ###for…of</p>
-<p> ####for-of循环适合遍历数组</p>
-<blockquote>
+<h3 id="for…of"><a href="#for…of" class="headerlink" title="for…of"></a>for…of</h3><h4 id="for-of循环适合遍历数组"><a href="#for-of循环适合遍历数组" class="headerlink" title="for-of循环适合遍历数组"></a>for-of循环适合遍历数组</h4><blockquote>
 <p>循环遍历对象的值，即键值对的键值。</p>
 </blockquote>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myArry =[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</span><br><span class="line">myArry.desc =<span class="string">'four'</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> value <span class="keyword">of</span> myArry)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(value)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//1</span></span><br><span class="line"><span class="comment">//2</span></span><br><span class="line"><span class="comment">//3</span></span><br><span class="line"><span class="comment">//4</span></span><br></pre></td></tr></table></figure>
@@ -444,7 +437,7 @@
 </ul>
 <p>代码如下：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> student=&#123;</span><br><span class="line">    name:<span class="string">'wujunchuan'</span>,</span><br><span class="line">    age:<span class="number">22</span>,</span><br><span class="line">    locate:&#123;</span><br><span class="line">    country:<span class="string">'china'</span>,</span><br><span class="line">    city:<span class="string">'xiamen'</span>,</span><br><span class="line">    school:<span class="string">'XMUT'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> key <span class="keyword">of</span> <span class="built_in">Object</span>.keys(student))&#123;</span><br><span class="line">    <span class="comment">//使用Object.keys()方法获取对象key的数组</span></span><br><span class="line">    <span class="built_in">console</span>.log(key+<span class="string">": "</span>+student[key]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p> ####总结：<br><strong>for…in与for…of</strong><br>格式对比：</p>
+<h4 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h4><p><strong>for…in与for…of</strong><br>格式对比：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> arr)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(arr[key]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> value <span class="keyword">of</span> arr)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(value);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ol>
 <li><p>推荐在循环<strong>对象</strong>属性的时候，使用for…in,在遍历<strong>数组</strong>的时候的时候使用for…of。</p>
@@ -454,7 +447,7 @@
 <li><p>注意，for…of是ES6新引入的特性。修复了ES5引入的for…in的不足。</p>
 </li>
 </ol>
-<p><a href="https://www.cnblogs.com/ruoqiang/p/6217929.html" target="_blank" rel="noopener">forEach/for…in/for…of</a><br><a href="https://github.com/wujunchuan/wujunchuan.github.io/issues/11" target="_blank" rel="noopener">迭代器与for…of循环</a></p>
+<h2 id="参考文章："><a href="#参考文章：" class="headerlink" title="参考文章："></a>参考文章：</h2><p><a href="https://www.cnblogs.com/ruoqiang/p/6217929.html" target="_blank" rel="noopener">forEach/for…in/for…of</a><br><a href="https://github.com/wujunchuan/wujunchuan.github.io/issues/11" target="_blank" rel="noopener">迭代器与for…of循环</a></p>
 
       
     </div>
@@ -550,8 +543,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -622,6 +624,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#map、eval、for…in、for…of、forEach"><span class="nav-number">1.</span> <span class="nav-text">map、eval、for…in、for…of、forEach</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#最早的数组遍历方式"><span class="nav-number">1.1.</span> <span class="nav-text">最早的数组遍历方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#map定义和方法"><span class="nav-number">1.2.</span> <span class="nav-text">map定义和方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#jquery中map方法用法同原生"><span class="nav-number">1.2.1.</span> <span class="nav-text">jquery中map方法用法同原生</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#eval"><span class="nav-number">1.3.</span> <span class="nav-text">eval</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#jquery中forEach"><span class="nav-number">1.3.1.</span> <span class="nav-text">jquery中forEach</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-for…in"><span class="nav-number">1.4.</span> <span class="nav-text">2 for…in</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#适合进行普通对象的遍历"><span class="nav-number">1.4.1.</span> <span class="nav-text">适合进行普通对象的遍历</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#for…of"><span class="nav-number">1.5.</span> <span class="nav-text">for…of</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#for-of循环适合遍历数组"><span class="nav-number">1.5.1.</span> <span class="nav-text">for-of循环适合遍历数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#总结："><span class="nav-number">1.5.2.</span> <span class="nav-text">总结：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文章："><span class="nav-number">2.</span> <span class="nav-text">参考文章：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
