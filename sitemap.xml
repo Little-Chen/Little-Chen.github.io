@@ -13,12 +13,12 @@
 
     <sitemap>
         <loc>http://yoursite.com/category-sitemap.xml</loc>
-        <lastmod>2018-03-22T07:45:43.080Z</lastmod>
+        <lastmod>2018-03-22T07:49:53.821Z</lastmod>
     </sitemap>
 
     <sitemap>
         <loc>http://yoursite.com/tag-sitemap.xml</loc>
-        <lastmod>2018-03-22T07:45:43.080Z</lastmod>
+        <lastmod>2018-03-22T07:49:53.821Z</lastmod>
     </sitemap>
 
 </sitemapindex>
