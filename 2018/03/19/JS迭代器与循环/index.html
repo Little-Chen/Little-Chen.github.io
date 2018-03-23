@@ -99,18 +99,18 @@
 
 
 
-<meta name="description" content="map、eval、for…in、for…of、forEach最早的数组遍历方式">
+<meta name="description" content="map、eval、for…in、for…of、forEach最早的数组遍历方式1234var a = [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;];for(var index = 0;index &amp;lt; a.length;index++)&amp;#123;  console.log(a[index]);&amp;#125;">
 <meta name="keywords" content="JS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JS迭代器与循环">
 <meta property="og:url" content="http://yoursite.com/2018/03/19/JS迭代器与循环/index.html">
 <meta property="og:site_name" content="Little Chen">
-<meta property="og:description" content="map、eval、for…in、for…of、forEach最早的数组遍历方式">
+<meta property="og:description" content="map、eval、for…in、for…of、forEach最早的数组遍历方式1234var a = [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;];for(var index = 0;index &amp;lt; a.length;index++)&amp;#123;  console.log(a[index]);&amp;#125;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-22T07:49:53.821Z">
+<meta property="og:updated_time" content="2018-03-23T08:27:31.732Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS迭代器与循环">
-<meta name="twitter:description" content="map、eval、for…in、for…of、forEach最早的数组遍历方式">
+<meta name="twitter:description" content="map、eval、for…in、for…of、forEach最早的数组遍历方式1234var a = [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;];for(var index = 0;index &amp;lt; a.length;index++)&amp;#123;  console.log(a[index]);&amp;#125;">
 
 
 
@@ -363,8 +363,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-03-22T15:49:53+08:00">
-                2018-03-22
+              <time title="更新于" itemprop="dateModified" datetime="2018-03-23T16:27:31+08:00">
+                2018-03-23
               </time>
             
           </span>
@@ -461,8 +461,8 @@
       
 
       
-        <h2 id="map、eval、for…in、for…of、forEach"><a href="#map、eval、for…in、for…of、forEach" class="headerlink" title="map、eval、for…in、for…of、forEach"></a>map、eval、for…in、for…of、forEach</h2><h3 id="最早的数组遍历方式"><a href="#最早的数组遍历方式" class="headerlink" title="最早的数组遍历方式"></a>最早的数组遍历方式</h3><a id="more"></a>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> index = <span class="number">0</span>;index &lt; a.length;index++)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a[index]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h2 id="map、eval、for…in、for…of、forEach"><a href="#map、eval、for…in、for…of、forEach" class="headerlink" title="map、eval、for…in、for…of、forEach"></a>map、eval、for…in、for…of、forEach</h2><h3 id="最早的数组遍历方式"><a href="#最早的数组遍历方式" class="headerlink" title="最早的数组遍历方式"></a>最早的数组遍历方式</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> index = <span class="number">0</span>;index &lt; a.length;index++)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a[index]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <h3 id="map定义和方法"><a href="#map定义和方法" class="headerlink" title="map定义和方法"></a>map定义和方法</h3><p><strong>map</strong>理解为“映射”的意思，基本用法同forEach，为ES5新增属性方法。<br>❤<strong>map()方法返回一个新数组，数组中的元素为原始数组元素调用函数处理的后值。</strong><br>❤<strong>map()方法按照原始数组元素顺序依次处理元素。</strong> </p>
 <p><strong>注意：</strong><br>map不会对空数组进行检测<br>map不会改变原始数组<br>处理函数必须有<strong>返回值</strong>，否则会映射成undefined。<br><strong>map使用语法：</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr.map(<span class="function"><span class="keyword">function</span>(<span class="params">currentValue，index，arr</span>),<span class="title">thisValue</span>)</span></span><br></pre></td></tr></table></figure>

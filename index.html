@@ -364,7 +364,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-03-23T16:24:38+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-03-23T16:27:30+08:00">
                 2018-03-23
               </time>
             
@@ -463,36 +463,23 @@
 
       
         
-          
-          一、基础概念1.1 http协议，即超文本传输协议。为TCP/IP的一个子集。
-TCP/IP协议族：包含HTTP协议。
-TCP/IP的分层管理：
-
-应用层：预存了各类应用服务，如：FTP、DNS
-传输层：提供了计算机间的数据传输，如：TCP、UDP
-网络层：处理网络上流动的数据包（数据的最小单位）
-数据链路层：处理网络连接的硬件部分。
-
-
-TCP/IP通信流程
-
-发送客户端在应用层发出查看请求，传输层将接受到的数据（请求报文）进行分割，并以此标序后发给网络层。在网络层增加通信目的地的MAC地址后发送给链路层。
-接收端在链路层收到数据，按照序号向上层发送，最终抵达应用层，服务器得到请求。发送端在每层传输时，都会逐层打上首部信息。接收端则依次删去。  这种数据信息包装的做法叫做封装！
-
-
-
-1.2 IP、TCP、DNS1.2.1 IP协议
-IP协议处在网络层，功能是实现数据包的传送。确保数据送达的两个重要条件是： IP地址和MAC地址。
-IP地址：节点被分配到的地址。（可变）
-MAC地址：网卡所属的固定地址。（固定）
-
-
-ARP：一种解析地址的协议。可以通过IP地址查询相应MAC地址。 
-
-          ...
+          <h2 id="一、基础概念"><a href="#一、基础概念" class="headerlink" title="一、基础概念"></a>一、基础概念</h2><h3 id="1-1-http协议，即超文本传输协议。为TCP-IP的一个子集。"><a href="#1-1-http协议，即超文本传输协议。为TCP-IP的一个子集。" class="headerlink" title="1.1 http协议，即超文本传输协议。为TCP/IP的一个子集。"></a>1.1 http协议，即超文本传输协议。为TCP/IP的一个子集。</h3><ul>
+<li>TCP/IP协议族：包含HTTP协议。</li>
+<li><p>TCP/IP的分层管理：</p>
+<ul>
+<li><strong>应用层</strong>：预存了各类应用服务，如：FTP、DNS</li>
+<li><strong>传输层</strong>：提供了计算机间的数据传输，如：TCP、UDP</li>
+<li><strong>网络层</strong>：处理网络上流动的数据包（数据的最小单位）</li>
+<li><strong>数据链路层</strong>：处理网络连接的硬件部分。</li>
+</ul>
+</li>
+<li><p><strong>TCP/IP通信流程</strong></p>
+<ul>
+<li>发送客户端在应用层发出查看请求，传输层将接受到的数据（请求报文）进行分割，并以此标序后发给网络层。在网络层增加通信目的地的MAC地址后发送给链路层。</li>
+<li>接收端在链路层收到数据，按照序号向上层发送，最终抵达应用层，服务器得到请求。
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/03/23/图解HTTP笔记/#more" rel="contents">
+            <a class="btn" href="/2018/03/23/图解HTTP笔记/#espandi" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -594,8 +581,8 @@ ARP：一种解析地址的协议。可以通过IP地址查询相应MAC地址。
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-03-22T15:49:53+08:00">
-                2018-03-22
+              <time title="更新于" itemprop="dateModified" datetime="2018-03-23T16:27:31+08:00">
+                2018-03-23
               </time>
             
           </span>
@@ -693,10 +680,10 @@ ARP：一种解析地址的协议。可以通过IP地址查询相应MAC地址。
 
       
         
-          <h2 id="map、eval、for…in、for…of、forEach"><a href="#map、eval、for…in、for…of、forEach" class="headerlink" title="map、eval、for…in、for…of、forEach"></a>map、eval、for…in、for…of、forEach</h2><h3 id="最早的数组遍历方式"><a href="#最早的数组遍历方式" class="headerlink" title="最早的数组遍历方式"></a>最早的数组遍历方式</h3>
+          <h2 id="map、eval、for…in、for…of、forEach"><a href="#map、eval、for…in、for…of、forEach" class="headerlink" title="map、eval、for…in、for…of、forEach"></a>map、eval、for…in、for…of、forEach</h2><h3 id="最早的数组遍历方式"><a href="#最早的数组遍历方式" class="headerlink" title="最早的数组遍历方式"></a>最早的数组遍历方式</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> index = <span class="number">0</span>;index &lt; a.length;index++)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a[index]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/03/19/JS迭代器与循环/#more" rel="contents">
+            <a class="btn" href="/2018/03/19/JS迭代器与循环/#espandi" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -900,7 +887,7 @@ ARP：一种解析地址的协议。可以通过IP地址查询相应MAC地址。
           <h1 id="html基础笔记"><a href="#html基础笔记" class="headerlink" title="html基础笔记"></a>html基础笔记</h1><h3 id="命名规范"><a href="#命名规范" class="headerlink" title="命名规范"></a><a href="http://tguide.qq.com/main/base.htm#css-list01" target="_blank" rel="noopener">命名规范</a></h3><h3 id="HTML是什么？"><a href="#HTML是什么？" class="headerlink" title="HTML是什么？"></a>HTML是什么？</h3><p>◾超文本标记语言（Hypertext Markup Language，HTML）通过标签语言来标记要显示的网页中的各个部分。一套规则，浏览器认识的规则。
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/03/09/HTML基础笔记/#more" rel="contents">
+            <a class="btn" href="/2018/03/09/HTML基础笔记/#espandi" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>

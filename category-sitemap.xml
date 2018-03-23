@@ -7,13 +7,6 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/categories/JS/</loc>
-        <lastmod>2018-03-22T07:49:53.821Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://yoursite.com/categories/html/</loc>
         <lastmod>2018-03-22T08:31:05.867Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -22,7 +15,14 @@
 
     <url>
         <loc>http://yoursite.com/categories/HTTP/</loc>
-        <lastmod>2018-03-23T08:24:38.240Z</lastmod>
+        <lastmod>2018-03-23T08:27:30.832Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/categories/JS/</loc>
+        <lastmod>2018-03-23T08:27:31.732Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
