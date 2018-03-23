@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://yoursite.com/2018/03/23/JS%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%EF%BC%88OOP%EF%BC%89/</loc>
+        <lastmod>2018-03-23T15:04:52.225Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://yoursite.com/2018/03/22/call%EF%BC%8Capply%EF%BC%8Cbind%E6%94%B9%E5%8F%98this%E6%8C%87%E5%90%91/</loc>
         <lastmod>2018-03-23T15:00:30.194Z</lastmod>
         <changefreq>weekly</changefreq>
