@@ -364,7 +364,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-03-23T23:12:05+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-03-23T23:20:21+08:00">
                 2018-03-23
               </time>
             
@@ -463,24 +463,12 @@
 
       
         
-          
-          什么是跨域？
-一般来说，当一个请求url的协议、域名、端口三者之间任意一个与当前页面地址不同即为跨域。最常见的就是在一个域名下的网页中，调用另一个域名中的资源。
-当浏览器报这样的错的时候，就是跨域请求出问题了！
-
-
-从根源上讲，跨域是由浏览器安全的同源策略引起的！同源策略是由Netscape提出的著名安全策略，是浏览器最核心、基本的安全功能,它限制了一个源(origin)中加载文本或者脚本与来自其他源(origin)中资源的交互方式。
-
-所谓的同源就是指的：协议、域名、端口相同。
-当浏览器执行一个脚本时会检查是否同源，只有同源的脚本才会执行，如果不同源即为跨域。同源策略是出于安全考虑对js进行限制，防止恶意用户获取非法数据，同时还防止了大部分XSS攻击（就是向用户界面注入js脚本）。通常跨域是由以下两种同源策略造成的
-DOM同源策略。禁止对不同源的页面的DOM进行操作，主要包括iframe、canvas之类的。不同源的iframe禁止数据交互的，含有不同源数据的canvas会受到污染而无法进行操作。
-XmlHttpRequest同源策略。简单来说就禁止不同源的AJAX请求。
-
-
-
-
-解
-          ...
+          <h2 id="什么是跨域？"><a href="#什么是跨域？" class="headerlink" title="什么是跨域？"></a>什么是跨域？</h2><ul>
+<li>一般来说，当一个请求url的<strong>协议、域名、端口</strong>三者之间任意一个与当前页面地址不同即为<strong>跨域</strong>。最常见的就是在一个域名下的网页中，调用另一个域名中的资源。</li>
+<li><p>当浏览器报这样的错的时候，就是跨域请求出问题了！</p>
+<!-- ![](http://img.blog.csdn.net/20180224230126966?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTGl0dGxlX0NoZW5I/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70) -->
+<img src="/article_img/跨域报错.png" class="[class names]">
+<h4 id="从根源上讲，跨域是由浏览器安全的同源策略引起的！"><a href="#从根源上讲，跨域是由浏览器安全的同源策略引起的！" class="headerlink" title="从根源上讲，跨域是由浏览器安全的同源策略引起的！"></a>从根源上讲，跨域是由浏览器安全的同源策略引起的！</h4>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/03/23/Ajax跨域/#more" rel="contents">
@@ -795,7 +783,7 @@ XmlHttpRequest同源策略。简单来说就禁止不同源的AJAX请求。
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-03-23T23:04:52+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-03-23T23:20:12+08:00">
                 2018-03-23
               </time>
             
@@ -894,28 +882,11 @@ XmlHttpRequest同源策略。简单来说就禁止不同源的AJAX请求。
 
       
         
-          
-          什么是面向对象？概念
-面向对象是把构成问题事务分解成各个对象，建立对象的目的不是为了完成一个步骤，而是为了描叙某个事物在整个解决问题的步骤中的行为。
-万事万物皆对象。面向对象的思想主要是以对象为主，将一个问题抽象出具体的对象，并且将抽象出来的对象和对象的属性和方法封装成一个类。
-
-在 OOP 中，每个对象能够接收消息，处理数据和发送消息给其他对象。每个对象都可以被看作是一个拥有清晰角色或责任的独立小机器。面向对象和面向过程的区别？我们常提到的两种编程方式就是面向过程和面向对象，面向过程的有C，面向对象的有java、C#、C++、JavaScript等。面向对象和面向过程是两种不同的编程思想。举个例子形象说明一下：在面向过程的编程方式中实现“把大象放冰箱”这个问题答案是耳熟能详的，一共分三步：
-
-开门（冰箱）；
-装进（冰箱，大象）；
-关门（冰箱）。
-
-而面向对象中呢？
-
-冰箱.开门（）
-冰箱.装进（大象）
-冰箱.关门（）
-
-总结：
-
-面向过程的特点在于逻辑性强，符合思维方式和解决问题的流程。
-面向对象的特点就是可扩展性更强一些，解决了代码重用性的问题。为什么要使用面向对象编程？我们知道，
-          ...
+          <h2 id="什么是面向对象？"><a href="#什么是面向对象？" class="headerlink" title="什么是面向对象？"></a>什么是面向对象？</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><ol>
+<li>面向对象是把构成问题事务分解成各个对象，建立对象的目的不是为了完成一个步骤，而是为了描叙某个事物在整个解决问题的步骤中的行为。</li>
+<li>万事万物皆对象。面向对象的思想主要是以对象为主，将一个问题抽象出具体的对象，并且将抽象出来的对象和对象的属性和方法封装成一个类。</li>
+</ol>
+<h4 id="在-OOP-中，每个对象能够接收消息，处理数据和发送消息给其他对象。每个对象都可以被看作是一个拥有清晰角色或责任的独立小机器。"><a href="#在-OOP-中，每个对象能够接收消息，处理数据和发送消息给其他对象。每个对象都可以被看作是一个拥有清晰角色或责任的独立小机器。" class="headerlink" title="在 OOP 中，每个对象能够接收消息，处理数据和发送消息给其他对象。每个对象都可以被看作是一个拥有清晰角色或责任的独立小机器。"></a>在 OOP 中，每个对象能够接收消息，处理数据和发送消息给其他对象。每个对象都可以被看作是一个拥有清晰角色或责任的独立小机器。</h4><h3 id="面向对象和面向过程的区别？"><a href="#面向对象和面向过程的区别？" class="headerlink" title="面向对象和面向过程的区别？"></a>面向对象和面向过程的区别？</h3><p>我们常提到的两种编程方式就是面向过程和面向对象，面向过程的有C，面向对象的有java、C#、C++、JavaScript等。<br>面向对象和面向过程是两种不同的编程思想。<strong>举个例子形象说明一下：</strong><br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/03/23/JS的面向对象（OOP）/#more" rel="contents">
@@ -1020,7 +991,7 @@ XmlHttpRequest同源策略。简单来说就禁止不同源的AJAX请求。
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-03-23T23:00:30+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-03-23T23:19:59+08:00">
                 2018-03-23
               </time>
             
@@ -1119,19 +1090,14 @@ XmlHttpRequest同源策略。简单来说就禁止不同源的AJAX请求。
 
       
         
-          
-          推荐非常浅显易懂的一片文章，搭配代码实例，易于理解！this与call…
-首先我们先要明确一点：
-this 永远指向最后调用它的那个对象！！！然后我们在看看这三种方法的异同：
-
-call()主动执行，第一个参数为this要指向的对象，函数执行需要的实参依次写在后面。
-apply()主动执行，第一个参数为this要指向的对象，第二参数为一个数组(类数组)，数组里包含所有实参。
-bind()也用来改变this的指向，但不会主动执行函数。传参方式同call。但是bind不兼容IE8
-三种方法，当第一个参数传null或者空，undefined时，this均指向window。apply：
-
-123456789var a =&#123;    name : &quot;Cherry&quot;,    fn : function (a,b) &#123;        console.log( a + b)    &#125;&#125;var b = a.fn;b.apply(a,[1,2])     // 3
-call：123456789var a =&#123;        name : 
-          ...
+          <p><strong>推荐非常浅显易懂的一片文章，搭配代码实例，易于理解！</strong><a href="https://juejin.im/post/59bfe84351882531b730bac2" target="_blank" rel="noopener">this与call…</a></p>
+<p>首先我们先要明确一点：</p>
+<h3 id="this-永远指向最后调用它的那个对象！！！"><a href="#this-永远指向最后调用它的那个对象！！！" class="headerlink" title="this 永远指向最后调用它的那个对象！！！"></a><strong>this 永远指向最后调用它的那个对象！！！</strong></h3><p>然后我们在看看这三种方法的异同：</p>
+<ol>
+<li><code>call()</code>主动执行，第一个参数为this要指向的对象，函数执行需要的实参依次写在后面。</li>
+<li><code>apply()</code>主动执行，第一个参数为this要指向的对象，第二参数为一个数组(类数组)，数组里包含所有实参。</li>
+<li><code>bind()</code>也用来改变this的指向，但不会主动执行函数。传参方式同call。<strong>但是bind不兼容IE8</strong></li>
+<li>三种方法，当第一个参数传<code>null</code>或者<code>空</code>，<code>undefined</code>时，this均指向<code>window</code>。
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/03/22/call，apply，bind改变this指向/#more" rel="contents">
@@ -1236,7 +1202,7 @@ call：123456789var a =&#123;        name :
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-03-23T22:57:19+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-03-23T23:19:47+08:00">
                 2018-03-23
               </time>
             
@@ -1335,15 +1301,9 @@ call：123456789var a =&#123;        name :
 
       
         
-          
-          前端性能优化的常用方法减少HTTP请求个数整合图片，合并css及JS文件，或者采用lazyload技术进行优化。
-避免repaint 和reflow重绘：元素样式改变，布局未变，不影响DOM结构。重排：DOM部分重新渲染。
-解决办法：避免操作DOM的结构、尺寸和内容；或者对于需要频繁操作的元素采用absolute定位脱离文档层。
-减少DOM的操作次数，整合多次DOM操作，尽量降低次数。避免循环操作DOM，性能开销太大。
-JSON进行数据交互，体量小，无需特殊处理货工具包。使用CDN（内容分发网络）基本思路是尽可能避开互联网上有可能影响数据传输速度和稳定性的瓶颈和环节，使内容传输的更快、更稳定。通过在网络各处放置节点服务器所构成的在现有的互联网基础之上的一层智能虚拟网络，CDN系统能够实时地根据网络流量和各节点的连接、负载状况以及到用户的距离和响应时间等综合信息将用户的请求重新导向离用户最近的服务节点上
-压缩图片和图片精灵使用浏览器缓存静态资源cache-control，设定缓存，expires设定缓存时间。
-###CSS为什么要放在头，而JS放在尾？浏览器在执行JavaScript代码
-          ...
+          <h2 id="前端性能优化的常用方法"><a href="#前端性能优化的常用方法" class="headerlink" title="前端性能优化的常用方法"></a>前端性能优化的常用方法</h2><h4 id="减少HTTP请求个数"><a href="#减少HTTP请求个数" class="headerlink" title="减少HTTP请求个数"></a>减少HTTP请求个数</h4><p>整合图片，合并css及JS文件，或者采用lazyload技术进行优化。</p>
+<h4 id="避免repaint-和reflow"><a href="#避免repaint-和reflow" class="headerlink" title="避免repaint 和reflow"></a>避免repaint 和reflow</h4><p>重绘：元素样式改变，布局未变，不影响DOM结构。<br>重排：DOM部分重新渲染。</p>
+<p>解决办法：避免操作DOM的结构、尺寸和内容；或者对于需要频繁操作的元素采用absolute定位脱离文档层。<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/03/21/前端性能优化/#more" rel="contents">

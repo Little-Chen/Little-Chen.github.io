@@ -107,7 +107,7 @@
 <meta property="og:site_name" content="Chen&#39;s Blog">
 <meta property="og:description" content="推荐非常浅显易懂的一片文章，搭配代码实例，易于理解！this与call… 首先我们先要明确一点： this 永远指向最后调用它的那个对象！！！然后我们在看看这三种方法的异同：  call()主动执行，第一个参数为this要指向的对象，函数执行需要的实参依次写在后面。 apply()主动执行，第一个参数为this要指向的对象，第二参数为一个数组(类数组)，数组里包含所有实参。 bind()也用来改变">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-23T15:00:30.194Z">
+<meta property="og:updated_time" content="2018-03-23T15:19:59.981Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="call，apply，bind改变this指向">
 <meta name="twitter:description" content="推荐非常浅显易懂的一片文章，搭配代码实例，易于理解！this与call… 首先我们先要明确一点： this 永远指向最后调用它的那个对象！！！然后我们在看看这三种方法的异同：  call()主动执行，第一个参数为this要指向的对象，函数执行需要的实参依次写在后面。 apply()主动执行，第一个参数为this要指向的对象，第二参数为一个数组(类数组)，数组里包含所有实参。 bind()也用来改变">
@@ -363,7 +363,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-03-23T23:00:30+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-03-23T23:19:59+08:00">
                 2018-03-23
               </time>
             
@@ -468,7 +468,8 @@
 <li><code>call()</code>主动执行，第一个参数为this要指向的对象，函数执行需要的实参依次写在后面。</li>
 <li><code>apply()</code>主动执行，第一个参数为this要指向的对象，第二参数为一个数组(类数组)，数组里包含所有实参。</li>
 <li><code>bind()</code>也用来改变this的指向，但不会主动执行函数。传参方式同call。<strong>但是bind不兼容IE8</strong></li>
-<li>三种方法，当第一个参数传<code>null</code>或者<code>空</code>，<code>undefined</code>时，this均指向<code>window</code>。<h3 id="apply："><a href="#apply：" class="headerlink" title="apply："></a>apply：</h3></li>
+<li>三种方法，当第一个参数传<code>null</code>或者<code>空</code>，<code>undefined</code>时，this均指向<code>window</code>。<a id="more"></a>
+<h3 id="apply："><a href="#apply：" class="headerlink" title="apply："></a>apply：</h3></li>
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var a =&#123;</span><br><span class="line">    name : &quot;Cherry&quot;,</span><br><span class="line">    fn : function (a,b) &#123;</span><br><span class="line">        console.log( a + b)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var b = a.fn;</span><br><span class="line">b.apply(a,[1,2])     // 3</span><br></pre></td></tr></table></figure>
 <h3 id="call："><a href="#call：" class="headerlink" title="call："></a>call：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var a =&#123;</span><br><span class="line">        name : &quot;Cherry&quot;,</span><br><span class="line">        fn : function (a,b) &#123;</span><br><span class="line">            console.log( a + b)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    var b = a.fn;</span><br><span class="line">    b.call(a,1,2)       // 3</span><br></pre></td></tr></table></figure>
