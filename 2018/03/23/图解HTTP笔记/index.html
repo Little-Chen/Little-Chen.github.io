@@ -108,7 +108,7 @@
 <meta property="og:description" content="基础概念http协议，即超文本传输协议。为TCP/IP的一个子集。 TCP/IP协议族：包含HTTP协议。 TCP/IP的分层管理： 应用层：预存了各类应用服务，如：FTP、DNS 传输层：提供了计算机间的数据传输，如：TCP、UDP 网络层：处理网络上流动的数据包（数据的最小单位） 数据链路层：处理网络连接的硬件部分。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/article_img/图解HTTP笔记(1).png">
-<meta property="og:updated_time" content="2018-03-23T08:51:11.308Z">
+<meta property="og:updated_time" content="2018-03-23T14:40:50.027Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="图解HTTP笔记">
 <meta name="twitter:description" content="基础概念http协议，即超文本传输协议。为TCP/IP的一个子集。 TCP/IP协议族：包含HTTP协议。 TCP/IP的分层管理： 应用层：预存了各类应用服务，如：FTP、DNS 传输层：提供了计算机间的数据传输，如：TCP、UDP 网络层：处理网络上流动的数据包（数据的最小单位） 数据链路层：处理网络连接的硬件部分。">
@@ -365,7 +365,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-03-23T16:51:11+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-03-23T22:40:50+08:00">
                 2018-03-23
               </time>
             
@@ -426,7 +426,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,362
+                  4,141
                 </span>
               
 
@@ -442,7 +442,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5
+                  15
                 </span>
               
             </div>
@@ -557,6 +557,124 @@
 </ul>
 </li>
 </ul>
+<h2 id="HTTP报文"><a href="#HTTP报文" class="headerlink" title="HTTP报文"></a>HTTP报文</h2><p><mark>P43请求行、状态行。</mark></p>
+<p><strong>范围请求：</strong>用首部字段Range指定资源的byte范围。<br>如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Range： bytes=5001-10000 //请求5001-10000字节的资源</span><br></pre></td></tr></table></figure></p>
+<h2 id="HTTP请求状态码"><a href="#HTTP请求状态码" class="headerlink" title="HTTP请求状态码"></a>HTTP请求状态码</h2><h3 id="1xx-消息"><a href="#1xx-消息" class="headerlink" title="1xx 消息"></a>1xx 消息</h3><p><strong>该类型的状态码代表请求已被接受，需要继续处理。</strong></p>
+<p>100 Continue</p>
+<p>客户端应当继续发送请求，这个临时响应是用来通知客户端的部分请求已经被服务器接收，且仍未被拒绝。客户端应当继续发送请求的剩余部分。<br>如果请求已经完成，忽略这个响应。服务器必须在请求完成后向客户端发送一个最终响应。</p>
+<p>101 Switching Protocols</p>
+<p>服务器已经理解客户端的请求，并通过 Update 消息头通知客户端采用不同的协议来完成这个请求。只有在切换新的协议更有好处时，才采取类似措施。</p>
+<p>102 Procsessing</p>
+<p>扩展状态码，代表处理将被继续执行。</p>
+<h3 id="2xx-成功"><a href="#2xx-成功" class="headerlink" title="2xx 成功"></a>2xx 成功</h3><p>该类型的状态码代表请求已成功被服务器接收、理解并接受。</p>
+<p><strong>200 OK</strong></p>
+<p>请求成功，请求所希望的响应头或数据体将随此响应返回。</p>
+<p>201 Created</p>
+<p>请求已经被实现，而且有一个新的资源已经依据请求的需要而创建，且其 URL 已经随 Location 头信息返回。</p>
+<p>202 Accepted</p>
+<p>服务器已接受请求，但尚未处理。正如它可能被拒绝一样，最终该请求可能会也可能不会被执行。</p>
+<p>203 Non-Authoritative Information</p>
+<p>服务器已成功处理了请求，但返回的实体头部元信息不是在原始服务器上有效的确定集合，而是来自本地或者第三方的拷贝。</p>
+<p><strong>204 No Content</strong></p>
+<p>服务器成功处理了请求，但不需要返回任何实体内容，并且希望返回更新了的元信息。该响应禁止包含任何消息体，始终以消息头后的第一个空行结束。</p>
+<p>205 Reset Content</p>
+<p>服务器成功处理了请求，且没有返回任何内容。与 204 不同之除在于，返回此状态码的响应要求请求者重置文档视图。该响应主要被用于接受用户输入后，<br>立即重置表单，以便用户能够开始另一次输入。同样被禁止包含任何消息体。</p>
+<p><strong>206 Partial Content</strong></p>
+<p>服务器已经成功处理了部分 GET 请求。类似于 FlashGet 或迅雷这类 HTTP 下载工具，都是使用此类响应实现断点续传或将大文件分解为多段同时下载。</p>
+<p>207 Multi-Status</p>
+<p>扩展状态码，代表之后的消息体将是一个 XML 消息，并且可能依照之前子请求数量的不同，包含一系列独立的响应代码。</p>
+<h3 id="3xx-重定向"><a href="#3xx-重定向" class="headerlink" title="3xx 重定向"></a>3xx 重定向</h3><p>这类状态码代表需要客户端采取进一步的操作才能完成请求。通常，这些状态码用来重定向，后续的请求地址 ( 重定向目标 )在本次响应的 Location 域中指明。<br>仅当后续请求所使用的方法是 GET 或 HEAD 时，用户浏览器才可以在没有用户介入的情况下自动提交所需要的后续请求。<br>客户端应当自动检测无限循环重定向，否则会导致双端不必要的资源消耗。HTTP/1.0 版规范建议，浏览器不应超过 5 次重定向。</p>
+<p>300 Multiple Choices</p>
+<p>被请求的资源有一系列可供选择的回馈信息，每个都有自己特定的地址和浏览器驱动的商议信息，用户或浏览器能够自行选择一个首选地址进行重定向。<br>除非这是一个 HEAD 请求，否则该响应应当包括一个资源特性及地址列表的实体，以便用户或浏览器从中选择最合适的重定向地址。</p>
+<p><strong>301 Moved Permanently</strong></p>
+<p>被请求的资源已永久移动到新位置，并且将来任何对此资源的引用都应该使用本响应返回的若干个 URI 之一。</p>
+<p><strong>302 Found</strong></p>
+<p>请求的资源现在临时从不同的 URI 响应请求。由于这样的重定向是临时的，客户端应当继续向原有地址发送以后的请求。</p>
+<p><strong>303 See other</strong></p>
+<p>对应当前请求的响应可以在另一个 URI 上被找到，而且客户端应当采用 GET 的方式访问那个资源。该请求禁止被缓存。</p>
+<p><strong>304 Not Modified</strong></p>
+<p>如果客户端发送了一个带条件的 GET 请求且该请求已被允许，而文档的内容自上次访问或根据请求的条件并没有改变，则服务器应当返回该状态码。<br>304 响应禁止包含消息体。</p>
+<p>305 Use Proxy</p>
+<p>被请求的资源必须通过指定的代理才能被访问。Location 域中将给出指定的代理所在 URI 的信息，接收者需要重复发送一个单独的请求，通过这个代理才能访问<br>相应的资源。只有原始服务器才能创建 305 响应。</p>
+<p>306 Switch Proxy</p>
+<p>最新版规范中，已经废弃。</p>
+<p><strong>307 Temporary Redirect</strong></p>
+<p>请求的资源现在临时从不同的 URI 响应请求。由于这样的重定向是临时的，客户端应当继续向原有地址发送以后的请求。只有在 Cache-Control 或 Expires 中进行<br>了指定的情况下，这个响应才是可缓存的。</p>
+<h3 id="4xx客户端错误"><a href="#4xx客户端错误" class="headerlink" title="4xx客户端错误"></a>4xx客户端错误</h3><p>该类型的状态码代表了客户端看起来可能发生了错误，妨碍了服务器的处理。</p>
+<p><strong>400 Bad Request</strong></p>
+<p>由于<strong>包含语法错误</strong>，当前请求无法被服务器理解。除非进行修改，否则客户端不应该重复提交这个请求。</p>
+<p>401 Unauthorized</p>
+<p>当前请求需要用户验证。</p>
+<p>402 Payment Required</p>
+<p>预留</p>
+<p><strong>403 Forbidden</strong></p>
+<p>服务器已经理解请求，但是拒绝执行。</p>
+<p><strong>404 Not Found</strong></p>
+<p>请求失败，请求所希望得到的资源未被在服务器上发现。</p>
+<p>405 Method Not Allowed</p>
+<p>请求的资源的内容特性无法满足请求头中的条件，因而无法生成响应实体。</p>
+<p>407 Proxy Authentication Required</p>
+<p>与 401 响应类似，只不过客户端必须在代理服务器进行身份验证。代理服务器必须返回一个 Proxy-Authenticate 用以身份询问。</p>
+<p>408 Request Timeout</p>
+<p>请求超时。客户端没有在服务器预备等待的时间内完成一个请求的发送。客户端可买随时再次提交这一请求而无需进行任何更改。</p>
+<p>409 Conflict</p>
+<p>由于和被请求的资源的当前状态之间存在冲突，请求无法完成。</p>
+<p>410 Gone</p>
+<p>被请求的资源在服务器上已经不再可用，而且没有任何已知的转发地址。</p>
+<p>411 Length Required</p>
+<p>服务器拒绝在没有定义 Content-Length 头的情况下接受请求。</p>
+<p>412 Precondition Failed</p>
+<p>服务器在验证请求的头字段中给出先决条件时，没能满足其中的一个或多个。</p>
+<p>413 Request Entity Too Large</p>
+<p>服务器拒绝处理当前请求，因为该请求提交的实体数据大小超过了服务器愿意或能够处理的范围。</p>
+<p>414 Request-URI Too Long</p>
+<p>请求的 URI 长度超过了服务器能够解释的长度，因此服务器拒绝对该请求提供服务。</p>
+<p>415 Unsupported Media Type</p>
+<p>对于当前请求的方法和所请求的资源，请求中提交的实体并不是服务器所支持的格式，因此请求被拒绝。</p>
+<p>416 Request Range Not Satisfiable</p>
+<p>如果请求中包含了 Range 请求头，并且 Range 中指定的任何数据范围都与当前资源的可用范围不重合，同时请求中又没有定义 If-Range 请求头，<br>那么服务器就应当返回 406 状态码。</p>
+<p>417 Expectation Failed</p>
+<p>在请求头 Expect 中指定的预期内容无法被服务器满足，或者这个服务器是一个代理服务器，它有明显的证据证明在当前路由的下一个节点上，Expect 的内容无法被满足。</p>
+<p>418 I’m a teapot</p>
+<p>不需要定义，是一个玩笑，为愚人节制定的。</p>
+<p>421 There are too many connections from your internet address</p>
+<p>从当前客户端所在的 IP 地址到服务器的连接数超过了服务器的许可最大范围。通常，这里的 IP 地址指的是从服务器看到的客户端地址。这里的客户端不一定是终端用户。</p>
+<p>422 Unprocessable Entity</p>
+<p>请求格式正确，但是由于含有语义错误，无法响应。</p>
+<p>423 Locked</p>
+<p>当前资源被锁定。</p>
+<p>424 Failed Dependency</p>
+<p>由于之前的某个请求发生的错误，导致当前请求失败。</p>
+<p>425 Unordered Collection</p>
+<p>没正式使用。</p>
+<p>426 Upgraed Required</p>
+<p>客户端应当切换到 TLS/1.0。</p>
+<p>449 Retry With</p>
+<p>由微软扩展，代表请求应当在执行完适当的操作后进行重试。</p>
+<p>451 Unavailable For Legal Reasons</p>
+<p>由 IETF 核准，代表访问因法律的要求被拒绝。</p>
+<h3 id="5xx-服务器错误"><a href="#5xx-服务器错误" class="headerlink" title="5xx 服务器错误"></a>5xx 服务器错误</h3><p>该类型的状态码代表了服务器在处理请求的过程中有错误或者异常状态发生，也有可能是服务器意识到以当前的软硬件资源无法完成对请求的处理。</p>
+<p><strong>500 Internal Server Error</strong></p>
+<p>服务器遇到了一个未曾预料的状况，导致了它无法完成对请求的处理。一般来讲，会出在服务器程序代码出错时出现。</p>
+<p>501 Not Implemented</p>
+<p>服务器不支持当前请求所需要的某个功能。当服务器无法识别请求的方法，并且无法支持其对任何资源的请求。</p>
+<p>502 Bad Gateway</p>
+<p>作为网关或代理工作的服务器尝试执行请求时，从上游服务器收到无效的响应。</p>
+<p><strong>503 Service Unavailable</strong></p>
+<p>由于临时的服务器维护或过载，服务器当前无法处理请求。</p>
+<p>504 Gateway Timeout</p>
+<p>作为网关或者代理工作的服务器尝试执行请求时，未能及时从上游服务器或者辅助服务器收到响应。<br>注意：某些代理服务器在 DNS 查找超时时会返回 400 或者 500 错误。</p>
+<p>505 HTTP Version Not Supported</p>
+<p>服务器不支持，或者拒绝支持在中使用的 HTTP 版本。这暗示着服务器不能或不愿意与客户端相同的版本。</p>
+<p>506 Variant Also Negotiates</p>
+<p>由《透明内容协商协议》扩展，代表服务器存在内部配置错误。</p>
+<p>507 Insufficient Storage</p>
+<p>服务器无法存储完成请求所必须的内容。</p>
+<p>509 Bandwidth Limit Exceeded</p>
+<p>服务器达到带宽限制。这不是一个官方的状态吗，但仍被广泛使用。</p>
+<p>510 Not Extended</p>
+<p>获取资源所需要的策略并没有被满足。</p>
+<h2 id="web服务器"><a href="#web服务器" class="headerlink" title="web服务器"></a>web服务器</h2><p> 虚拟主机：实现了一台HTTP服务器搭建多个web站点。</p>
 
       
     </div>
@@ -787,7 +905,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础概念"><span class="nav-number">1.</span> <span class="nav-text">基础概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#http协议，即超文本传输协议。为TCP-IP的一个子集。"><span class="nav-number">1.1.</span> <span class="nav-text">http协议，即超文本传输协议。为TCP/IP的一个子集。</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#发送端在每层传输时，都会逐层打上首部信息。接收端则依次删去。-这种数据信息包装的做法叫做封装！"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">发送端在每层传输时，都会逐层打上首部信息。接收端则依次删去。  这种数据信息包装的做法叫做封装！</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IP、TCP、DNS"><span class="nav-number">1.2.</span> <span class="nav-text">IP、TCP、DNS</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#IP协议"><span class="nav-number">1.2.1.</span> <span class="nav-text">IP协议</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP协议"><span class="nav-number">1.2.2.</span> <span class="nav-text">TCP协议</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DNS协议"><span class="nav-number">1.2.3.</span> <span class="nav-text">DNS协议</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#URL-URI"><span class="nav-number">1.3.</span> <span class="nav-text">URL/URI</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简单的HTTP协议"><span class="nav-number">2.</span> <span class="nav-text">简单的HTTP协议</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP简单通信过程"><span class="nav-number">2.1.</span> <span class="nav-text">HTTP简单通信过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP是无状态协议"><span class="nav-number">2.2.</span> <span class="nav-text">HTTP是无状态协议</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础概念"><span class="nav-number">1.</span> <span class="nav-text">基础概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#http协议，即超文本传输协议。为TCP-IP的一个子集。"><span class="nav-number">1.1.</span> <span class="nav-text">http协议，即超文本传输协议。为TCP/IP的一个子集。</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#发送端在每层传输时，都会逐层打上首部信息。接收端则依次删去。-这种数据信息包装的做法叫做封装！"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">发送端在每层传输时，都会逐层打上首部信息。接收端则依次删去。  这种数据信息包装的做法叫做封装！</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IP、TCP、DNS"><span class="nav-number">1.2.</span> <span class="nav-text">IP、TCP、DNS</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#IP协议"><span class="nav-number">1.2.1.</span> <span class="nav-text">IP协议</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP协议"><span class="nav-number">1.2.2.</span> <span class="nav-text">TCP协议</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DNS协议"><span class="nav-number">1.2.3.</span> <span class="nav-text">DNS协议</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#URL-URI"><span class="nav-number">1.3.</span> <span class="nav-text">URL/URI</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简单的HTTP协议"><span class="nav-number">2.</span> <span class="nav-text">简单的HTTP协议</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP简单通信过程"><span class="nav-number">2.1.</span> <span class="nav-text">HTTP简单通信过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP是无状态协议"><span class="nav-number">2.2.</span> <span class="nav-text">HTTP是无状态协议</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP报文"><span class="nav-number">3.</span> <span class="nav-text">HTTP报文</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP请求状态码"><span class="nav-number">4.</span> <span class="nav-text">HTTP请求状态码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1xx-消息"><span class="nav-number">4.1.</span> <span class="nav-text">1xx 消息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2xx-成功"><span class="nav-number">4.2.</span> <span class="nav-text">2xx 成功</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3xx-重定向"><span class="nav-number">4.3.</span> <span class="nav-text">3xx 重定向</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4xx客户端错误"><span class="nav-number">4.4.</span> <span class="nav-text">4xx客户端错误</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5xx-服务器错误"><span class="nav-number">4.5.</span> <span class="nav-text">5xx 服务器错误</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#web服务器"><span class="nav-number">5.</span> <span class="nav-text">web服务器</span></a></li></ol></div>
             
 
           </div>
@@ -841,7 +959,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共8.2k字</span>
+  <span class="post-count">博客全站共11.0k字</span>
 </div>
         
 
