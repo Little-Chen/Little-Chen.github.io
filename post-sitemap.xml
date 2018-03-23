@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://yoursite.com/2018/03/23/Ajax%E8%B7%A8%E5%9F%9F/</loc>
+        <lastmod>2018-03-23T15:12:05.140Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://yoursite.com/2018/03/23/JS%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%EF%BC%88OOP%EF%BC%89/</loc>
         <lastmod>2018-03-23T15:04:52.225Z</lastmod>
         <changefreq>weekly</changefreq>
