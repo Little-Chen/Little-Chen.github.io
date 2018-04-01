@@ -78,6 +78,18 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[CSS盒模型]]></title>
+    <url>%2F2017%2F11%2F05%2FCSS%E7%9B%92%E6%A8%A1%E5%9E%8B%2F</url>
+    <content type="text"><![CDATA[CSS盒模型本质上是一个盒子，封装周围的HTML元素，它包括：边距，边框，填充，和实际内容。 Margin(外边距) - 清除边框外的区域，外边距是透明的。 Border(边框) - 围绕在内边距和内容外的边框。 Padding(内边距) - 清除内容周围的区域，内边距是透明的。 Content(内容) - 盒子的内容，显示文本和图像。box-sizing盒模型解析方式引子：通常情况下，被更多人认知的盒模型就是简单盒模型，简单盒模型在早期IE（ IE 5 和 6 ）时期有一种怪异模式下的解析方式，也就是现在的border-box，后来W3C制定的标准以后规定在标准解析模式下使用标准盒模型(content-box)。 例子：设定两个参数相同的不同盒模型！12345678910111213141516171819html与css设定.box1&#123; width: 200px; height: 200px; margin: 100px; padding: 50px; border: 10px solid red; box-sizing: content-box; background-color: pink;&#125;.box2&#123; width: 200px; height: 200px; margin: 100px; padding: 50px; border: 10px solid red; box-sizing: border-box; background-color: green;&#125; content-box标准盒模型● width = 内容的宽度 ● height = 内容的高度 border-box怪异盒模型● width = border + padding + 内容的宽度 ●height = border + padding + 内容的高度]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>盒模型</tag>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[JavaScript中的闭包]]></title>
     <url>%2F2017%2F10%2F24%2F%E9%97%AD%E5%8C%85%2F</url>
     <content type="text"><![CDATA[0 前置知识：基于js的函数作用域，局部变量的特性，函数外部是无法访问函数内部的变量的。而有时我们恰恰有这样的需求，这就有了闭包的方法。 1 闭包的概念：闭包是指可以访问另一函数内部变量的函数通常构造闭包的方式是在函数中定义一个函数，用做访问函数内部变量的“钩子”，或者可以理解为开辟了外部访问函数内部变量的“绿色通道”。 2 闭包的原理分析：123456789 function f1()&#123; var n=999; function f2()&#123; alert(n); // 999 &#125; &#125; 遵循js作用域链的规则，上述代码中，f2可以访问f1的变量n。因此我们只需要将f2返回出来，就可以实现闭包。 123456789101112131415function f1()&#123; var n=999; function f2()&#123; alert(n); &#125; return f2; &#125; var result=f1(); result(); // 999 注意：123456789101112131415161718192021 function f1()&#123; var n=999; nAdd=function()&#123;n+=1&#125; function f2()&#123; alert(n); &#125; return f2; &#125; var result=f1(); result(); // 999 nAdd(); result(); // 1000 我们发现，函数f1中的局部变量n一直保存在内存中，并没有在f1调用后被自动清除。原因就在于f1是f2的父函数，而f2被赋给了一个全局变量，这导致f2始终在内存中，而f2的存在依赖于f1，因此f1也始终在内存中，不会在调用结束后，被垃圾回收机制（garbage collection）回收。另外，nAdd也是一个闭包，因此可以访问函数f1内的n，若是换成在函数外定义一个nAdd函数，浏览器会报错，无法访问到n。 12345result(); // 999var nAdd = function() &#123; n += 1&#125;nAdd(); 3 闭包的优缺点： 1.通过闭包获取到的变量会永久的保留在内存中，不会被回收，因此闭包要慎用，否则会给浏览器带来较大的负担，影响性能。严重的会导致内存泄漏，解决方法是，在退出函数之前，将不使用的局部变量全部删除。 通过闭包访问的，函数内部的变量不再隐私，可以在函数外对其进行修改，因此在对闭包获取的变量进行操作时，不要随便更改其值。 4 闭包的常见使用方法：1.通过将函数return出去，使其可在外部访问。12345678function foo()&#123; var a = 2; function bar()&#123; console.log(a); //2 &#125; return bar;&#125;foo()(); 2 通过将其作为想要执行的函数的参数。1234567891011//在foo()函数的作用域中声明，在bar()函数的作用域中被调用的baz()函数是闭包function foo()&#123; var a = 2; function baz()&#123; console.log(a); //2 &#125; bar(baz);&#125;function bar(fn)&#123; fn();&#125; 3 将内部函数赋值给一个外部变量12345678910var inner;var F = function()&#123; var b = 'local'; var N = function()&#123; return b; &#125;; inner = N;&#125;;F();console.log(inner()); 5 通过闭包嵌套解决常见的for循环i问题1234567891011function createFunctions()&#123; var result = new Array(); for(var i=0;i&lt;10;i++)&#123; result[i] = function()&#123; return i; &#125;; &#125; return result;&#125;console.log(createFunctions()); 以上代码，for循环执行中，每次匿名函数调用完后，执行环境的作用域链被销毁，但是活动对象仍然保留。因此，createFunction()函数会返回一个函数数组，每个元素都是一个函数指针，在调用执行时找i，此时i均为i=10。通过闭包解决上述问题： 12345678910111213function createFunctions()&#123; var result = new Array(); for(var i=0;i&lt;10;i++)&#123; result[i] = function(num)&#123; //i将作为参数传进来，保存在作用域内，因此每个num都在不同的作用域中，通过闭包访问的值就是正常我们需要的。 return function ()&#123; return num &#125;; &#125;(i); &#125; return result;&#125;console.log(createFunctions()); 6 闭包实现私有变量封装借助闭包，同样可以封装一个私有变量。 12345678910111213141516171819function create_counter(initial) &#123; var x = initial || 0; return &#123; inc: function () &#123; x += 1; return x; &#125; &#125;&#125;var c1 = create_counter();c1.inc(); // 1c1.inc(); // 2c1.inc(); // 3var c2 = create_counter(10);c2.inc(); // 11c2.inc(); // 12c2.inc(); // 13 在返回的对象中，实现了一个闭包，该闭包携带了局部变量x，并且，从外部代码根本无法访问到变量x。换句话说，闭包就是携带状态的函数，并且它的状态可以完全对外隐藏起来。参考文章：闭包，阮一峰JavaScript闭包]]></content>
@@ -87,18 +99,6 @@
       <tags>
         <tag>JS</tag>
         <tag>闭包</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[CSS盒模型]]></title>
-    <url>%2F2017%2F10%2F24%2FCSS%E7%9B%92%E6%A8%A1%E5%9E%8B%2F</url>
-    <content type="text"><![CDATA[CSS盒模型本质上是一个盒子，封装周围的HTML元素，它包括：边距，边框，填充，和实际内容。 Margin(外边距) - 清除边框外的区域，外边距是透明的。 Border(边框) - 围绕在内边距和内容外的边框。 Padding(内边距) - 清除内容周围的区域，内边距是透明的。 Content(内容) - 盒子的内容，显示文本和图像。box-sizing盒模型解析方式引子：通常情况下，被更多人认知的盒模型就是简单盒模型，简单盒模型在早期IE（ IE 5 和 6 ）时期有一种怪异模式下的解析方式，也就是现在的border-box，后来W3C制定的标准以后规定在标准解析模式下使用标准盒模型(content-box)。 例子：设定两个参数相同的不同盒模型！12345678910111213141516171819html与css设定.box1&#123; width: 200px; height: 200px; margin: 100px; padding: 50px; border: 10px solid red; box-sizing: content-box; background-color: pink;&#125;.box2&#123; width: 200px; height: 200px; margin: 100px; padding: 50px; border: 10px solid red; box-sizing: border-box; background-color: green;&#125; content-box标准盒模型● width = 内容的宽度 ● height = 内容的高度 border-box怪异盒模型● width = border + padding + 内容的宽度 ●height = border + padding + 内容的高度]]></content>
-      <categories>
-        <category>CSS</category>
-      </categories>
-      <tags>
-        <tag>盒模型</tag>
-        <tag>CSS</tag>
       </tags>
   </entry>
   <entry>

@@ -195,6 +195,31 @@
   </entry>
   
   <entry>
+    <title>CSS盒模型</title>
+    <link href="http://yoursite.com/2017/11/05/CSS%E7%9B%92%E6%A8%A1%E5%9E%8B/"/>
+    <id>http://yoursite.com/2017/11/05/CSS盒模型/</id>
+    <published>2017-11-05T02:31:22.000Z</published>
+    <updated>2018-04-01T15:43:20.684Z</updated>
+    
+    <content type="html"><![CDATA[<p>CSS盒模型本质上是一个盒子，封装周围的HTML元素，它包括：边距，边框，填充，和实际内容。</p><p><img src="http://img.blog.csdn.net/2018022723385666?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTGl0dGxlX0NoZW5I/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><a id="more"></a></p><ul><li>Margin(外边距) - 清除边框外的区域，外边距是透明的。</li><li>Border(边框) - 围绕在内边距和内容外的边框。</li><li>Padding(内边距) - 清除内容周围的区域，内边距是透明的。</li><li>Content(内容) - 盒子的内容，显示文本和图像。<h3 id="box-sizing盒模型解析方式"><a href="#box-sizing盒模型解析方式" class="headerlink" title="box-sizing盒模型解析方式"></a><code>box-sizing</code>盒模型解析方式</h3><strong>引子：</strong>通常情况下，被更多人认知的盒模型就是简单盒模型，简单盒模型在早期IE（ IE 5 和 6 ）时期有一种怪异模式下的解析方式，也就是现在的border-box，后来W3C制定的标准以后规定在标准解析模式下使用标准盒模型(content-box)。</li></ul><p>例子：设定两个参数相同的不同<strong>盒模型！</strong><br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">html</span>与<span class="selector-tag">css</span>设定</span><br><span class="line"><span class="selector-class">.box1</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line"><span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line"><span class="attribute">margin</span>: <span class="number">100px</span>;</span><br><span class="line"><span class="attribute">padding</span>: <span class="number">50px</span>;</span><br><span class="line"><span class="attribute">border</span>: <span class="number">10px</span> solid red;</span><br><span class="line"><span class="attribute">box-sizing</span>: content-box;</span><br><span class="line"><span class="attribute">background-color</span>: pink;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.box2</span>&#123;</span><br><span class="line"><span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line"><span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line"><span class="attribute">margin</span>: <span class="number">100px</span>;</span><br><span class="line"><span class="attribute">padding</span>: <span class="number">50px</span>;</span><br><span class="line"><span class="attribute">border</span>: <span class="number">10px</span> solid red;</span><br><span class="line"><span class="attribute">box-sizing</span>: border-box;</span><br><span class="line"><span class="attribute">background-color</span>: green;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p><img src="http://img.blog.csdn.net/20180227233350687?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTGl0dGxlX0NoZW5I/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p><ol><li><code>content-box</code>标准盒模型<br><img src="http://img.blog.csdn.net/20180227233400522?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTGl0dGxlX0NoZW5I/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><pre><code>● width = 内容的宽度● height = 内容的高度</code></pre></li><li><code>border-box</code>怪异盒模型<br><img src="http://img.blog.csdn.net/20180227233409432?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTGl0dGxlX0NoZW5I/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><pre><code>● width = border + padding + 内容的宽度●height = border + padding + 内容的高度</code></pre></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;CSS盒模型本质上是一个盒子，封装周围的HTML元素，它包括：边距，边框，填充，和实际内容。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://img.blog.csdn.net/2018022723385666?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTGl0dGxlX0NoZW5I/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70&quot; alt=&quot;这里写图片描述&quot;&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="CSS" scheme="http://yoursite.com/categories/CSS/"/>
+    
+    
+      <category term="盒模型" scheme="http://yoursite.com/tags/%E7%9B%92%E6%A8%A1%E5%9E%8B/"/>
+    
+      <category term="CSS" scheme="http://yoursite.com/tags/CSS/"/>
+    
+  </entry>
+  
+  <entry>
     <title>JavaScript中的闭包</title>
     <link href="http://yoursite.com/2017/10/24/%E9%97%AD%E5%8C%85/"/>
     <id>http://yoursite.com/2017/10/24/闭包/</id>
@@ -216,31 +241,6 @@
       <category term="JS" scheme="http://yoursite.com/tags/JS/"/>
     
       <category term="闭包" scheme="http://yoursite.com/tags/%E9%97%AD%E5%8C%85/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CSS盒模型</title>
-    <link href="http://yoursite.com/2017/10/24/CSS%E7%9B%92%E6%A8%A1%E5%9E%8B/"/>
-    <id>http://yoursite.com/2017/10/24/CSS盒模型/</id>
-    <published>2017-10-24T07:31:54.000Z</published>
-    <updated>2018-04-01T15:42:41.362Z</updated>
-    
-    <content type="html"><![CDATA[<p>CSS盒模型本质上是一个盒子，封装周围的HTML元素，它包括：边距，边框，填充，和实际内容。</p><p><img src="http://img.blog.csdn.net/2018022723385666?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTGl0dGxlX0NoZW5I/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><a id="more"></a></p><ul><li>Margin(外边距) - 清除边框外的区域，外边距是透明的。</li><li>Border(边框) - 围绕在内边距和内容外的边框。</li><li>Padding(内边距) - 清除内容周围的区域，内边距是透明的。</li><li>Content(内容) - 盒子的内容，显示文本和图像。<h3 id="box-sizing盒模型解析方式"><a href="#box-sizing盒模型解析方式" class="headerlink" title="box-sizing盒模型解析方式"></a><code>box-sizing</code>盒模型解析方式</h3><strong>引子：</strong>通常情况下，被更多人认知的盒模型就是简单盒模型，简单盒模型在早期IE（ IE 5 和 6 ）时期有一种怪异模式下的解析方式，也就是现在的border-box，后来W3C制定的标准以后规定在标准解析模式下使用标准盒模型(content-box)。</li></ul><p>例子：设定两个参数相同的不同<strong>盒模型！</strong><br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">html</span>与<span class="selector-tag">css</span>设定</span><br><span class="line"><span class="selector-class">.box1</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line"><span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line"><span class="attribute">margin</span>: <span class="number">100px</span>;</span><br><span class="line"><span class="attribute">padding</span>: <span class="number">50px</span>;</span><br><span class="line"><span class="attribute">border</span>: <span class="number">10px</span> solid red;</span><br><span class="line"><span class="attribute">box-sizing</span>: content-box;</span><br><span class="line"><span class="attribute">background-color</span>: pink;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.box2</span>&#123;</span><br><span class="line"><span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line"><span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line"><span class="attribute">margin</span>: <span class="number">100px</span>;</span><br><span class="line"><span class="attribute">padding</span>: <span class="number">50px</span>;</span><br><span class="line"><span class="attribute">border</span>: <span class="number">10px</span> solid red;</span><br><span class="line"><span class="attribute">box-sizing</span>: border-box;</span><br><span class="line"><span class="attribute">background-color</span>: green;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p><img src="http://img.blog.csdn.net/20180227233350687?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTGl0dGxlX0NoZW5I/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p><ol><li><code>content-box</code>标准盒模型<br><img src="http://img.blog.csdn.net/20180227233400522?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTGl0dGxlX0NoZW5I/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><pre><code>● width = 内容的宽度● height = 内容的高度</code></pre></li><li><code>border-box</code>怪异盒模型<br><img src="http://img.blog.csdn.net/20180227233409432?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTGl0dGxlX0NoZW5I/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><pre><code>● width = border + padding + 内容的宽度●height = border + padding + 内容的高度</code></pre></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;CSS盒模型本质上是一个盒子，封装周围的HTML元素，它包括：边距，边框，填充，和实际内容。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://img.blog.csdn.net/2018022723385666?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTGl0dGxlX0NoZW5I/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70&quot; alt=&quot;这里写图片描述&quot;&gt;&lt;br&gt;
-    
-    </summary>
-    
-      <category term="CSS" scheme="http://yoursite.com/categories/CSS/"/>
-    
-    
-      <category term="盒模型" scheme="http://yoursite.com/tags/%E7%9B%92%E6%A8%A1%E5%9E%8B/"/>
-    
-      <category term="CSS" scheme="http://yoursite.com/tags/CSS/"/>
     
   </entry>
   
