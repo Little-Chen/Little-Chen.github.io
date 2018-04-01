@@ -86,7 +86,7 @@
 
 
 
-  <meta name="keywords" content="闭包，JS," />
+  <meta name="keywords" content="JS,闭包," />
 
 
 
@@ -99,19 +99,19 @@
 
 
 
-<meta name="description" content="0 前置知识：基于js的函数作用域，局部变量的特性，函数外部是无法访问函数内部的变量的。而有时我们恰恰有这样的需求，这就有了闭包的方法。 1 闭包的概念：闭包是指可以访问另一函数内部变量的函数通常构造闭包的方式是在函数中定义一个函数，用做访问函数内部变量的“钩子”，或者可以理解为开辟了外部访问函数内部变量的“绿色通道”。 2 闭包的原理分析：123456789　　function f1()&amp;#12">
-<meta name="keywords" content="闭包，JS">
+<meta name="description" content="0 前置知识：基于js的函数作用域，局部变量的特性，函数外部是无法访问函数内部的变量的。而有时我们恰恰有这样的需求，这就有了闭包的方法。 1 闭包的概念：闭包是指可以访问另一函数内部变量的函数通常构造闭包的方式是在函数中定义一个函数，用做访问函数内部变量的“钩子”，或者可以理解为开辟了外部访问函数内部变量的“绿色通道”。">
+<meta name="keywords" content="JS,闭包">
 <meta property="og:type" content="article">
-<meta property="og:title" content="闭包">
+<meta property="og:title" content="JavaScript中的闭包">
 <meta property="og:url" content="http://yoursite.com/2017/10/24/闭包/index.html">
 <meta property="og:site_name" content="Chen&#39;s Blog">
-<meta property="og:description" content="0 前置知识：基于js的函数作用域，局部变量的特性，函数外部是无法访问函数内部的变量的。而有时我们恰恰有这样的需求，这就有了闭包的方法。 1 闭包的概念：闭包是指可以访问另一函数内部变量的函数通常构造闭包的方式是在函数中定义一个函数，用做访问函数内部变量的“钩子”，或者可以理解为开辟了外部访问函数内部变量的“绿色通道”。 2 闭包的原理分析：123456789　　function f1()&amp;#12">
+<meta property="og:description" content="0 前置知识：基于js的函数作用域，局部变量的特性，函数外部是无法访问函数内部的变量的。而有时我们恰恰有这样的需求，这就有了闭包的方法。 1 闭包的概念：闭包是指可以访问另一函数内部变量的函数通常构造闭包的方式是在函数中定义一个函数，用做访问函数内部变量的“钩子”，或者可以理解为开辟了外部访问函数内部变量的“绿色通道”。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://img.blog.csdn.net/20180308170052197?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTGl0dGxlX0NoZW5I/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:updated_time" content="2018-04-01T15:30:06.712Z">
+<meta property="og:updated_time" content="2018-04-01T15:34:12.789Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="闭包">
-<meta name="twitter:description" content="0 前置知识：基于js的函数作用域，局部变量的特性，函数外部是无法访问函数内部的变量的。而有时我们恰恰有这样的需求，这就有了闭包的方法。 1 闭包的概念：闭包是指可以访问另一函数内部变量的函数通常构造闭包的方式是在函数中定义一个函数，用做访问函数内部变量的“钩子”，或者可以理解为开辟了外部访问函数内部变量的“绿色通道”。 2 闭包的原理分析：123456789　　function f1()&amp;#12">
+<meta name="twitter:title" content="JavaScript中的闭包">
+<meta name="twitter:description" content="0 前置知识：基于js的函数作用域，局部变量的特性，函数外部是无法访问函数内部的变量的。而有时我们恰恰有这样的需求，这就有了闭包的方法。 1 闭包的概念：闭包是指可以访问另一函数内部变量的函数通常构造闭包的方式是在函数中定义一个函数，用做访问函数内部变量的“钩子”，或者可以理解为开辟了外部访问函数内部变量的“绿色通道”。">
 <meta name="twitter:image" content="http://img.blog.csdn.net/20180308170052197?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTGl0dGxlX0NoZW5I/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
 
 
@@ -148,7 +148,7 @@
 
 
 
-  <title>闭包 | Chen's Blog</title>
+  <title>JavaScript中的闭包 | Chen's Blog</title>
   
 
 
@@ -337,7 +337,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">闭包</h1>
+          <h1 class="post-title" itemprop="name headline">JavaScript中的闭包</h1>
         
 
         <div class="post-meta">
@@ -365,7 +365,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-04-01T23:30:06+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-04-01T23:34:12+08:00">
                 2018-04-01
               </time>
             
@@ -401,7 +401,7 @@
 
           
           
-             <span id="/2017/10/24/闭包/" class="leancloud_visitors" data-flag-title="闭包">
+             <span id="/2017/10/24/闭包/" class="leancloud_visitors" data-flag-title="JavaScript中的闭包">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -464,7 +464,7 @@
 
       
         <h2 id="0-前置知识："><a href="#0-前置知识：" class="headerlink" title="0 前置知识："></a>0 前置知识：</h2><p>基于js的函数作用域，局部变量的特性，函数外部是无法访问函数内部的变量的。<br><strong>而有时我们恰恰有这样的需求，这就有了闭包的方法。</strong></p>
-<h2 id="1-闭包的概念："><a href="#1-闭包的概念：" class="headerlink" title="1 闭包的概念："></a>1 闭包的概念：</h2><p><strong>闭包是指可以访问另一函数内部变量的函数</strong><br>通常构造闭包的方式是在函数中定义一个函数，用做访问函数内部变量的<strong>“钩子”</strong>，或者可以理解为开辟了外部访问函数内部变量的<strong>“绿色通道”</strong>。</p>
+<h2 id="1-闭包的概念："><a href="#1-闭包的概念：" class="headerlink" title="1 闭包的概念："></a>1 闭包的概念：</h2><p><strong>闭包是指可以访问另一函数内部变量的函数</strong><br>通常构造闭包的方式是在函数中定义一个函数，用做访问函数内部变量的<strong>“钩子”</strong>，或者可以理解为开辟了外部访问函数内部变量的<strong>“绿色通道”</strong>。<br><a id="more"></a></p>
 <h2 id="2-闭包的原理分析："><a href="#2-闭包的原理分析：" class="headerlink" title="2 闭包的原理分析："></a>2 闭包的原理分析：</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">　　<span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">　　　　<span class="keyword">var</span> n=<span class="number">999</span>;</span><br><span class="line"></span><br><span class="line">　　　　<span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">　　　　　　alert(n); <span class="comment">// 999</span></span><br><span class="line">　　　　&#125;</span><br><span class="line"></span><br><span class="line">　　&#125;</span><br></pre></td></tr></table></figure>
 <p>遵循js作用域链的规则，上述代码中，f2可以访问f1的变量n。因此我们只需要<strong>将f2返回出来</strong>，就可以实现闭包。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">　　　　<span class="keyword">var</span> n=<span class="number">999</span>;</span><br><span class="line"></span><br><span class="line">　　　　<span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">　　　　　　alert(n); </span><br><span class="line">　　　　&#125;</span><br><span class="line"></span><br><span class="line">　　　　<span class="keyword">return</span> f2;</span><br><span class="line"></span><br><span class="line">　　&#125;</span><br><span class="line"></span><br><span class="line">　　<span class="keyword">var</span> result=f1();</span><br><span class="line"></span><br><span class="line">　　result(); <span class="comment">// 999</span></span><br></pre></td></tr></table></figure>
@@ -514,7 +514,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/闭包，JS/" rel="tag"><i class="fa fa-tag"></i>闭包，JS</a>
+            <a href="/tags/JS/" rel="tag"><i class="fa fa-tag"></i>JS</a>
+          
+            <a href="/tags/闭包/" rel="tag"><i class="fa fa-tag"></i>闭包</a>
           
         </div>
       
@@ -653,7 +655,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

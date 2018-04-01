@@ -1788,7 +1788,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/10/24/闭包/" itemprop="url">闭包</a></h1>
+                <a class="post-title-link" href="/2017/10/24/闭包/" itemprop="url">JavaScript中的闭包</a></h1>
         
 
         <div class="post-meta">
@@ -1816,7 +1816,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-04-01T23:30:06+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-04-01T23:34:12+08:00">
                 2018-04-01
               </time>
             
@@ -1852,7 +1852,7 @@
 
           
           
-             <span id="/2017/10/24/闭包/" class="leancloud_visitors" data-flag-title="闭包">
+             <span id="/2017/10/24/闭包/" class="leancloud_visitors" data-flag-title="JavaScript中的闭包">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1915,14 +1915,8 @@
 
       
         
-          
-          0 前置知识：基于js的函数作用域，局部变量的特性，函数外部是无法访问函数内部的变量的。而有时我们恰恰有这样的需求，这就有了闭包的方法。
-1 闭包的概念：闭包是指可以访问另一函数内部变量的函数通常构造闭包的方式是在函数中定义一个函数，用做访问函数内部变量的“钩子”，或者可以理解为开辟了外部访问函数内部变量的“绿色通道”。
-2 闭包的原理分析：123456789　　function f1()&#123;　　　　var n=999;　　　　function f2()&#123;　　　　　　alert(n); // 999　　　　&#125;　　&#125;
-遵循js作用域链的规则，上述代码中，f2可以访问f1的变量n。因此我们只需要将f2返回出来，就可以实现闭包。
-123456789101112131415function f1()&#123;　　　　var n=999;　　　　function f2()&#123;　　　　　　alert(n); 　　　　&#125;　　　　return f2;　　&#125;　　var result=f1();　　result(); // 999
-注意：
-          ...
+          <h2 id="0-前置知识："><a href="#0-前置知识：" class="headerlink" title="0 前置知识："></a>0 前置知识：</h2><p>基于js的函数作用域，局部变量的特性，函数外部是无法访问函数内部的变量的。<br><strong>而有时我们恰恰有这样的需求，这就有了闭包的方法。</strong></p>
+<h2 id="1-闭包的概念："><a href="#1-闭包的概念：" class="headerlink" title="1 闭包的概念："></a>1 闭包的概念：</h2><p><strong>闭包是指可以访问另一函数内部变量的函数</strong><br>通常构造闭包的方式是在函数中定义一个函数，用做访问函数内部变量的<strong>“钩子”</strong>，或者可以理解为开辟了外部访问函数内部变量的<strong>“绿色通道”</strong>。<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/10/24/闭包/#more" rel="contents">
@@ -2246,7 +2240,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
